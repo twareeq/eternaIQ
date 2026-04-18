@@ -75,9 +75,9 @@ export default function WhyEterna() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="bg-white p-14 lg:p-16 rounded-[2.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.1)] max-w-xl"
+              className="bg-white p-8 md:p-14 lg:p-16 rounded-[2.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.1)] max-w-xl"
             >
-              <h3 className="text-2xl font-title font-medium text-[#b0b9bd] mb-14 uppercase tracking-[0.15em]">
+              <h3 className="text-2xl font-title font-medium text-[#b0b9bd] mb-10 md:mb-14 uppercase tracking-[0.15em]">
                 Quality Assurance
               </h3>
 
@@ -173,9 +173,9 @@ export default function WhyEterna() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * idx, duration: 0.6 }}
-                className="bg-[#546a75]/30 backdrop-blur-md p-10 lg:p-12 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all duration-500 group"
+                className="bg-[#546a75]/30 backdrop-blur-md p-8 md:p-10 lg:p-12 rounded-[2rem] border border-white/5 hover:border-white/10 transition-all duration-500 group"
               >
-                <div className="flex gap-8 items-start">
+                <div className="flex gap-6 md:gap-8 items-start">
                   <div className="mt-1 transition-transform group-hover:scale-110 duration-500">
                     {card.icon}
                   </div>
