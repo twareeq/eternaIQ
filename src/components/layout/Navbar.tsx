@@ -15,6 +15,18 @@ const navLinks = [
   { name: "All Treatments", href: "#" },
 ];
 
+const mobileNavLinksTop = [
+  { name: "Metabolic Health", href: "#" },
+  { name: "Hormone Health", href: "#" },
+  { name: "Energy & Recovery", href: "#" },
+  { name: "Aesthetics", href: "#" },
+];
+
+const mobileNavLinksBottom = [
+  { name: "FAQs", href: "#" },
+  { name: "All Treatments", href: "#" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -83,29 +95,58 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[100] bg-background p-8 lg:hidden flex flex-col"
+            className="fixed inset-0 z-[100] bg-black p-6 flex flex-col justify-between"
           >
-            <div className="flex justify-between items-center mb-12">
-              <span className="text-2xl font-title font-medium tracking-tight text-white">ETERNA IQ</span>
-              <button onClick={() => setMobileMenuOpen(false)} className="text-white">
-                <X size={32} />
-              </button>
-            </div>
-            <div className="flex flex-col gap-8">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-3xl font-title font-medium text-white/50 hover:text-accent transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.name}
+            <div>
+              {/* Header */}
+              <div className="flex justify-between items-center mb-16 mt-2 border-b border-transparent">
+                <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                  <Image
+                    src="/assets/eterna-iq-logo.png"
+                    alt="Eterna IQ Logo"
+                    width={140}
+                    height={32}
+                    className="h-6 w-auto object-contain"
+                    priority
+                  />
                 </Link>
-              ))}
-              <button className="mt-8 px-8 py-4 rounded-full bg-accent text-black font-title font-medium text-xl">
-                Find Your Protocol
-              </button>
+                <button onClick={() => setMobileMenuOpen(false)} className="text-white hover:text-white/70 transition-colors p-2 -mr-2">
+                  <X size={32} strokeWidth={1.5} />
+                </button>
+              </div>
+
+              {/* Links List */}
+              <div className="flex flex-col gap-6 text-center mt-10">
+                {mobileNavLinksTop.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-[22px] font-title font-normal text-white hover:text-accent transition-colors tracking-wide"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+                
+                <div className="w-12 h-px bg-white/20 mx-auto my-1" />
+
+                {mobileNavLinksBottom.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="text-[22px] font-title font-normal text-white hover:text-accent transition-colors tracking-wide"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
             </div>
+
+            {/* Bottom CTA */}
+            <button className="w-full mb-6 px-8 py-[18px] rounded-full bg-accent text-black font-title font-medium text-[17px] tracking-wide hover:shadow-[0_0_20px_rgba(45,212,191,0.4)] transition-all">
+              Find Your Protocol
+            </button>
           </motion.div>
         )}
       </AnimatePresence>
