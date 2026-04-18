@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 const symptoms = [
-  "Fatigue",
-  "Weight Gain",
-  "Brain Fog",
-  "Low Libido",
-  "Muscle Loss",
-  "Poor Sleep",
-  "Slow Recovery",
-  "Hormone Imbalance",
-  "Burnout",
-  "Inflammation",
+  'Fatigue',
+  'Weight Gain',
+  'Brain Fog',
+  'Low Libido',
+  'Muscle Loss',
+  'Poor Sleep',
+  'Slow Recovery',
+  'Hormone Imbalance',
+  'Burnout',
+  'Inflammation',
 ];
 
 export default function AssessmentCTA() {
   return (
-    <section className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden bg-black py-24">
+    <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-black py-24">
       {/* Background Image - Face/Pill Closeup */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -62,8 +62,8 @@ export default function AssessmentCTA() {
           transition={{ delay: 0.1 }}
           className="text-white/70 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed font-body font-normal"
         >
-          Tell us what you're experiencing, and we'll match you with the right 
-          clinically guided optimization pathway.
+          Tell us what you're experiencing, and we'll match you with
+          the right clinically guided optimization pathway.
         </motion.p>
 
         {/* Symptom Tags */}
