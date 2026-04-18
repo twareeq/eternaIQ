@@ -75,28 +75,33 @@ const SocialIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f5f5f5] pt-24 pb-12 text-[#1a1a1a]">
+    <footer className="bg-[#f5f5f5] pt-16 md:pt-24 pb-8 md:pb-12 text-[#1a1a1a]">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Top Branding Section */}
-        <div className="mb-16">
-          <h2 className="text-5xl md:text-7xl font-title font-medium tracking-tight mb-4">
+        <div className="mb-10 md:mb-16">
+          <h2 className="text-4xl md:text-7xl font-title font-light md:font-medium tracking-tight mb-4">
             Eterna IQ
           </h2>
-          <p className="text-xl md:text-2xl text-black/60 font-light">
-            Unlock the Future of Health Optimization.
+          <p className="text-xl md:text-2xl text-black/60 font-light pr-4 md:pr-0">
+            Unlock the Future of Health<br className="md:hidden" /> Optimization.
           </p>
         </div>
 
-        <div className="w-full h-px bg-black/10 mb-16" />
+        <div className="w-full h-px bg-black/10 mb-10 md:mb-16" />
 
         {/* Navigation Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-12 mb-12 md:mb-20 pt-4 md:pt-0">
           {NavigationData.map((column) => (
-            <div key={column.title}>
-              <h3 className="text-2xl font-normal mb-8 text-black/90 tracking-tight">
-                {column.title}
-              </h3>
-              <ul className="space-y-4">
+            <div key={column.title} className="flex flex-col">
+              <div className="group flex items-center gap-3 text-black/90 hover:text-[#2dd4bd] transition-colors md:cursor-default cursor-pointer mb-2 md:mb-8">
+                <span className="text-[#2dd4bd] opacity-60 md:hidden font-light text-xl">
+                  &gt;
+                </span>
+                <h3 className="text-2xl font-light tracking-tight">
+                  {column.title}
+                </h3>
+              </div>
+              <ul className="hidden md:block space-y-4">
                 {column.links.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -115,32 +120,34 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="w-full h-px bg-black/10 mb-16" />
+        <div className="w-full h-px bg-black/10 mb-10 md:mb-16" />
 
         {/* Brand & Social Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 mb-16">
-          <div className="flex flex-col gap-8 flex-1">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-12 mb-12 md:mb-16">
+          <div className="flex flex-col gap-6 flex-1">
             {/* Dark Logo Badge */}
-            <div className="bg-[#1a1a1a] text-white px-8 py-4 rounded-2xl w-fit flex items-center justify-center">
-              <span className="text-2xl tracking-[0.2em] font-title font-medium">
+            <div className="bg-[#1a1a1a] text-white px-6 py-3 md:px-8 md:py-4 rounded-xl md:rounded-2xl w-fit flex items-center justify-center">
+              <span className="text-xl md:text-2xl tracking-[0.2em] font-title font-medium">
                 ETERNA <span className="text-white/40 ml-1 italic font-body font-light tracking-normal">IQ</span>
               </span>
             </div>
-            <p className="text-black/50 max-w-md leading-relaxed">
+            <p className="text-black/50 text-base md:text-lg max-w-md leading-relaxed font-light">
               Premium telehealth optimization for metabolic health, hormones,
               energy, and longevity. Clinically guided. Concierge delivered.
             </p>
           </div>
 
-          <div className="flex flex-col items-end gap-6">
-            <span className="text-black/40 text-lg uppercase tracking-widest font-medium">Connect</span>
+          <div className="flex flex-col items-start md:items-end gap-4 mt-2 md:mt-0">
+            <span className="text-black/60 text-lg font-light md:uppercase md:tracking-widest md:font-medium">
+              Connect
+            </span>
             <div className="flex gap-4">
               {SocialIcons.map((social) => (
                 <motion.a
                   key={social.name}
                   href="#"
                   whileHover={{ scale: 1.1, backgroundColor: "#ffffff" }}
-                  className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center text-black/60 hover:text-black hover:shadow-sm transition-all bg-transparent"
+                  className="w-12 h-12 rounded-full bg-white border border-black/10 flex items-center justify-center text-black/80 hover:text-black hover:shadow-sm transition-all"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -150,11 +157,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="w-full h-px bg-black/5 mb-12" />
+        <div className="w-full h-px bg-black/10 mb-8 md:mb-12" />
 
         {/* Medical Disclaimer */}
-        <div className="mb-12">
-          <p className="text-black/30 text-center text-sm leading-loose max-w-5xl mx-auto italic font-light">
+        <div className="mb-8 md:mb-12">
+          <p className="text-black/40 text-left md:text-center text-xs md:text-sm leading-loose max-w-5xl mx-auto font-light">
             Eterna IQ Health is a telehealth platform. All protocols are designed and
             supervised by licensed, board-certified clinicians. Medications are
             sourced from FDA-registered U.S.-based compounding pharmacies. Results
@@ -164,7 +171,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-8 border-t border-black/5 flex justify-between items-center text-black/30 text-sm tracking-wide">
+        <div className="pt-6 md:pt-8 border-t border-black/10 flex justify-center text-black/40 text-xs md:text-sm tracking-wide">
           <p>© 2026 Eterna IQ Health. All rights reserved.</p>
         </div>
       </div>
